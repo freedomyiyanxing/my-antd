@@ -11,6 +11,7 @@
   $hover-background: lighten($background, 10%),
   $hover-border: lighten($border, 10%),
   $hover-color: $color,
+  $active-background: darken($background, 10%),
 ) {
   color: $color;
   background: $background;
@@ -31,6 +32,10 @@
     color: $color;
     background: $background;
     border-color: $border;
+  }
+  &:active,
+  &.active{
+    background: $active-background;
   }
 }
 

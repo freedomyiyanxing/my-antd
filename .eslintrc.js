@@ -34,6 +34,7 @@ module.exports = {
     'react/prop-types': 0,
     'no-console': 0,
     'react/jsx-props-no-spreading': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
     'prettier/prettier': [
       2,
       {
