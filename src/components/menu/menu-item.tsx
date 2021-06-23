@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import classnames from 'classnames';
 import { MenuContext } from './menu';
 
-interface MenuItemProps {
+export interface MenuItemProps {
   disabled?: boolean;
   className?: string;
   activeIndex: number;
@@ -38,5 +38,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
 MenuItem.defaultProps = {
   disabled: false,
 };
+
+MenuItem.displayName = 'MenuItem';
 
 export default MenuItem;

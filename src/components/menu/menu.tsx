@@ -1,9 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
+import { MenuItemProps } from './menu-item';
 
 type SelectType = (index: number) => void;
 
-interface MenuProps {
+export interface MenuProps {
   className?: string;
   onSelect?: SelectType;
   defaultActive?: number;
@@ -38,9 +39,20 @@ const Menu: React.FC<MenuProps> = (props) => {
     onSelect: handleSelect,
   };
 
+  const renderChildren = () =>
+    React.Children.map(children, (child) => {
+      const childElement = child as React.FunctionComponentElement<MenuItemProps>;
+      const { displayName } = childElement.type;
+      if (displayName === 'MenuItem') {
+        return child;
+      } else {
+        console.error('Error: 子组件必须是 MenuItem');
+      }
+    });
+
   return (
-    <div className={classes} style={style}>
-      <MenuContext.Provider value={menuValue}>{children}</MenuContext.Provider>
+    <div className={classes} style={style} data-testid="test-menu">
+      <MenuContext.Provider value={menuValue}>{renderChildren()}</MenuContext.Provider>
     </div>
   );
 };

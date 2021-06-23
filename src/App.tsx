@@ -24,7 +24,15 @@ const App = (): JSX.Element => {
         </Button>
       </div>
 
-      <Menu onSelect={(i) => console.log(i)}>
+      <Menu mode="horizontal" onSelect={(i) => console.log(i)}>
+        <MenuItem activeIndex={0}>click A</MenuItem>
+        <MenuItem activeIndex={1} disabled>
+          click B
+        </MenuItem>
+        <MenuItem activeIndex={2}>click C</MenuItem>
+      </Menu>
+
+      <Menu mode="vertical" onSelect={(i) => console.log(i)}>
         <MenuItem activeIndex={0}>click A</MenuItem>
         <MenuItem activeIndex={1}>click B</MenuItem>
         <MenuItem activeIndex={2}>click C</MenuItem>

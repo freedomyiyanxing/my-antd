@@ -1,8 +1,17 @@
-.active{
-  color: crimson;
-}
-
 .menu-item{
-  user-select: none;
   cursor: pointer;
+  padding: $menu-item-padding-y $menu-item-padding-x;
+  transition: $menu-transition;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+  &.is-disabled{
+    color:$menu-item-disabled-color;
+    pointer-events: none;
+    cursor: default;
+  }
+  &.active {
+    color: $menu-item-active-color;
+    border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+  }
 }
