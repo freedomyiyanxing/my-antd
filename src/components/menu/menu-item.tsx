@@ -5,7 +5,7 @@ import { MenuContext } from './menu';
 export interface MenuItemProps {
   disabled?: boolean;
   className?: string;
-  activeIndex: number;
+  activeIndex?: number;
   style?: React.CSSProperties;
 }
 
@@ -23,7 +23,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
       return;
     }
 
-    if (onSelect && !disabled) {
+    if (onSelect && !disabled && typeof activeIndex === 'number') {
       onSelect(activeIndex);
     }
   };

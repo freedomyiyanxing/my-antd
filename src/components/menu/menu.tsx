@@ -40,11 +40,11 @@ const Menu: React.FC<MenuProps> = (props) => {
   };
 
   const renderChildren = () =>
-    React.Children.map(children, (child) => {
+    React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement<MenuItemProps>;
       const { displayName } = childElement.type;
       if (displayName === 'MenuItem') {
-        return child;
+        return React.cloneElement(childElement, { activeIndex: index });
       } else {
         console.error('Error: 子组件必须是 MenuItem');
       }

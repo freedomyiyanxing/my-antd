@@ -25,17 +25,15 @@ const App = (): JSX.Element => {
       </div>
 
       <Menu mode="horizontal" onSelect={(i) => console.log(i)}>
-        <MenuItem activeIndex={0}>click A</MenuItem>
-        <MenuItem activeIndex={1} disabled>
-          click B
-        </MenuItem>
-        <MenuItem activeIndex={2}>click C</MenuItem>
+        <MenuItem>click A</MenuItem>
+        <MenuItem disabled>click B</MenuItem>
+        <MenuItem>click C</MenuItem>
       </Menu>
 
       <Menu mode="vertical" onSelect={(i) => console.log(i)}>
-        <MenuItem activeIndex={0}>click A</MenuItem>
-        <MenuItem activeIndex={1}>click B</MenuItem>
-        <MenuItem activeIndex={2}>click C</MenuItem>
+        <MenuItem>click A</MenuItem>
+        <MenuItem>click B</MenuItem>
+        <MenuItem>click C</MenuItem>
       </Menu>
 
       <div>
